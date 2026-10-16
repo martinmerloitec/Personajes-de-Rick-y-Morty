@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorador Multiversal de Rick y Morty</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Explorador de Rick y Morty</h1>
+    <p>Multiverso C-137 y Dimensiones Alternativas</p>
+  </header>
+
+  <!-- Filtros y Búsqueda -->
+  <section class="controls">
+    <input type="text" id="nameInput" placeholder="Buscar por nombre o apodo..." />
+    
+    <select id="speciesSelect">
+      <option value="">Todas las especies</option>
+      <option value="human">Humano</option>
+      <option value="alien">Alien</option>
+      <option value="humanoid">Humanoide</option>
+      <option value="robot">Robot</option>
+      <option value="mythological">Mitológico</option>
+      <option value="unknown">Desconocido</option>
+    </select>
+
+    <select id="statusSelect">
+      <option value="">Todos los estados</option>
+      <option value="alive">Vivo</option>
+      <option value="dead">Muerto</option>
+      <option value="unknown">Desconocido</option>
+    </select>
+
+    <button id="searchBtn" onclick="buscarPersonajes()">Buscar</button>
+  </section>
+
+  <!-- Filtros Rápidos -->
+  <section class="quick-filters">
+    <button onclick="filtroRapido('rick')">🧪 Solo Ricks</button>
+    <button onclick="filtroRapido('morty')">👦 Solo Mortys</button>
+    <button onclick="filtroRapido('')">🌀 Ver Todos</button>
+  </section>
+
+  <!-- Grid de Personajes -->
+  <main id="charactersContainer" class="grid"></main>
+
+  <!-- Paginación -->
+  <div class="pagination">
+    <button id="prevBtn" onclick="cambiarPagina(-1)">◀ Anterior</button>
+    <span id="pageIndicator">Página 1</span>
+    <button id="nextBtn" onclick="cambiarPagina(1)">Siguiente ▶</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
